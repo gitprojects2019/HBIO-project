@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PlayerlistComponent } from './playerlist/playerlist.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [PlayerlistComponent],
   imports: [
     CommonModule
   ],
