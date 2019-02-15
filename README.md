@@ -9,7 +9,7 @@ git push
 
 git clone repo name
 git branch -a
-git branch  new_branch_name  (to create new branch)
+git checkout -b  new_branch_name  (to create new branch)
 git checkout new_branch_name (to switch branch)
 
 
