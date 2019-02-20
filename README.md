@@ -33,6 +33,7 @@ git mergetool (in case of conflicts)
 
 git push 
 
+git branch -d branch_name
 ------
 
 
