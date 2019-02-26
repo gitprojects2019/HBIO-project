@@ -1,3 +1,4 @@
+import { PlayerModule } from './player/player.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -16,6 +17,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     SharedModule,
     CoreModule,
+    PlayerModule,
     AppRoutingModule
   ],
   providers: [],
