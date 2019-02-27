@@ -6,14 +6,16 @@ import { playerRoutes } from './player.route';
 
 
 import { PlayerlistComponent } from './playerlist/playerlist.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [PlayerlistComponent],
   imports: [
     CommonModule,
+    MatButtonModule,
     playerRoutes,
     RouterModule
   ],
-  exports:[RouterModule]
+  exports: [RouterModule]
 })
 export class PlayerModule { }

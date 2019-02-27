@@ -3,7 +3,7 @@ import { Route, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 const routes: Route[] = [
-    { path : 'play'  , children: [
+    { path : 'player'  , children: [
         {path: '', component : PlayerlistComponent}
     ]
 
@@ -15,5 +15,5 @@ const routes: Route[] = [
     exports:[RouterModule]
 })
 export class playerRoutes {
-    
+
 }

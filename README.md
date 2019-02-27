@@ -37,3 +37,4 @@ git branch -d branch_name
 ------
 
 
+git pull origin master - update local repo from master
