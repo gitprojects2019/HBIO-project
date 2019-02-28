@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 const routes: Route[] = [
     { path : 'player'  , children: [
-        {path: '', component : PlayerlistComponent}
+        {path: 'list', component : PlayerlistComponent}
     ]
 
     }
