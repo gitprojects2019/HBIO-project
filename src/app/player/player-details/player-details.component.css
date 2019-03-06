@@ -1,0 +1,18 @@
+.card-header{
+  font-weight: bolder;
+  font-size: 2rem;
+  height: 65px;
+}
+
+
+
+.container{
+  margin-bottom: 30px;
+  margin-top: 30px; 
+}
+
+.pldsForm {
+  width: 70%;
+  margin-left: 318px;
+  padding: 80px 3rem 1rem
+}

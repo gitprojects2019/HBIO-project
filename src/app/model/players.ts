@@ -8,9 +8,11 @@ export class PlayerDetails{
     Age:string;
     Weight:string;
     ContactNumber:string;
+    // Country:string;
     State:string;
     District:string;
     Gender:string;
     TournamentName:string;
     TournamentDate:string;
+    // TournamentPlace:string;
 }

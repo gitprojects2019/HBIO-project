@@ -7,4 +7,7 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class ModelModule { }
+export class ModelModule { 
+
+  //
+}
