@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 @Component({
-  selector: 'app-palyer-details',
-  templateUrl: './palyer-details.component.html',
-  styleUrls: ['./palyer-details.component.css']
+  selector: 'app-player-details',
+  templateUrl: './player-details.component.html',
+  styleUrls: ['./player-details.component.css']
 })
-export class PalyerDetailsComponent implements OnInit {
+export class PlayerDetailsComponent implements OnInit {
 
+  requiredAlert: string = "This Field is required";
+  currentDate = new Date().toISOString().split('T')[0];
  // govIdTypes:["School Id card","Aadhar","License","Pancard"];
   govIdTypes =  [
     {value: '0', viewValue: 'Select an option'},
@@ -38,10 +40,40 @@ export class PalyerDetailsComponent implements OnInit {
     {value: '2', viewValue: 'Aadhar'},
     {value: '3', viewValue: 'License'}
   ];
+  playerDetailsForm: FormGroup;
 
-  constructor() { }
+ test:false;
+ 
+  constructor(private fb:FormBuilder) {
+    this.playerDetailsForm = fb.group({
+      'firstName': [null,Validators.required],
+      'middleName': "",
+      'lastName': [null,Validators.required],
+      'regId': "",
+      'govId': "",
+      'govIdType': "",
+      'dob': [null,Validators.required],
+      'contact': "",
+      'age': [null,Validators.required],
+      'weight': [null,Validators.required],
+      'country': "",
+      'state': "",
+      'district': "",
+      'tourName': "",
+      'tourPlace': "",
+      'tourDate': ""
+    });
+   }
+
 
   ngOnInit() {
   }
+
+
+  onSubmit(post) {
+    // console.log(post.firstName);
+    console.log(this.playerDetailsForm.value);
+  }
+
 
 }

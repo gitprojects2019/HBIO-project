@@ -1,0 +1,167 @@
+<div class="pldsForm">
+    <div class="card-header">
+      <label style="color:#117298;">
+        Player Details Form
+      </label>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="playerDetailsForm" class="form-horizontal" (ngSubmit)="onSubmit()">
+        <fieldset>
+          <div class="form-group row">
+            <div class="col-sm-4">
+              <label for="firstName" class="font-weight-bold">First Name</label>
+              <input type="text" formControlName="firstName" class="form-control" id="firstName"
+                placeholder="First Name">
+              <div class="alert alert-danger"
+                *ngIf="!playerDetailsForm.controls['firstName'].valid && playerDetailsForm.controls['firstName'].touched">
+                {{requiredAlert}}
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <label for="middleName" class="font-weight-bold">Middle Name</label>
+              <input type="text" formControlName="middleName" class="form-control" id="middleName"
+                placeholder="Middle Name">
+            </div>
+            <div class="col-sm-4">
+              <label for="lastName" class="font-weight-bold">Last Name</label>
+              <input type="text" formControlName="lastName" class="form-control" id="lastName" placeholder="Last Name">
+              <div class="alert alert-danger"
+                *ngIf="!playerDetailsForm.controls['lastName'].valid && playerDetailsForm.controls['lastName'].touched">
+                {{requiredAlert}}
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-4">
+              <label for="regId" class="font-weight-bold">Registration Id</label>
+              <input type="Number" formControlName="regId" class="form-control" id="regId"
+                placeholder="Registration Id">
+              <div class="alert alert-danger"
+                *ngIf="!playerDetailsForm.controls['regId'].valid && playerDetailsForm.controls['regId'].touched">
+                {{requiredAlert}}
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-4">
+              <label for="govId" class="font-weight-bold">Government Id</label>
+              <input type="text" formControlName="govId" class="form-control" id="govId" placeholder="Government Id">
+            </div>
+            <div class="col-sm-4">
+              <label for="govIdType" class="font-weight-bold">Government Id Type</label>
+              <select formControlName="govIdType" class="form-control" id="govIdType">
+                <option *ngFor="let govIdType of govIdTypes" [value]="govIdType.value">{{govIdType.viewValue}}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-2">
+              <label for="dob" class="font-weight-bold">Date of birth</label>
+              <input type="date" formControlName="dob" class="form-control" max="2018-03-03" id="dob" placeholder="Date of birth">
+              <div class="alert alert-danger"
+                *ngIf="!playerDetailsForm.controls['dob'].valid && playerDetailsForm.controls['dob'].touched">
+                {{requiredAlert}}
+              </div>
+            </div>
+
+            <div class="col-sm-2">
+              <label for="contact" class="font-weight-bold">Contact</label>
+              <input type="number" formControlName="contact" class="form-control" id="contact" placeholder="contact">
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-2">
+              <label for="age" class="font-weight-bold">Age</label>
+              <div class="input-group mb-2">
+                <input type="number" formControlName="age" class="form-control" min="0" id="age" placeholder="Age">
+                <div class="input-group-append">
+                  <div class="input-group-text">yrs</div>
+                </div>
+              </div>
+              <div class="alert alert-danger"
+                *ngIf="!playerDetailsForm.controls['age'].valid && playerDetailsForm.controls['age'].touched">
+                {{requiredAlert}}
+              </div>
+            </div>
+
+            <div class="col-sm-2">
+              <label for="weight" class="font-weight-bold">Weight</label>
+              <div class="input-group mb-2">
+                <input type="number" formControlName="weight" class="form-control" min="0" id="weight" placeholder="Weight">
+                <div class="input-group-append">
+                  <div class="input-group-text">Kg</div>
+                </div>
+              </div>
+              <div class="alert alert-danger"
+                *ngIf="!playerDetailsForm.controls['weight'].valid && playerDetailsForm.controls['weight'].touched">
+                {{requiredAlert}}
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="font-weight-bold">Gender</label>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked="">
+              <label class="custom-control-label" for="customRadio1">Female</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+              <label class="custom-control-label" for="customRadio2">Male</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+              <label class="custom-control-label" for="customRadio3">Other</label>
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <div class="col-sm-4">
+              <label for="country" class="font-weight-bold">Country</label>
+              <select formControlName="country" class="form-control" id="country">
+                <option *ngFor="let country of countries" [value]="country.value">{{country.viewValue}}</option>
+              </select>
+            </div>
+            <div class="col-sm-4">
+              <label for="state" class="font-weight-bold">State</label>
+              <select formControlName="state" class="form-control" id="state">
+                <option *ngFor="let state of states" [value]="state.value">{{state.viewValue}}</option>
+              </select>
+            </div>
+            <div class="col-sm-4">
+              <label for="District" class="font-weight-bold">District</label>
+              <input formControlName="district" type="text" class="form-control" id="district" placeholder="District">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-4">
+              <label for="tourName" class="font-weight-bold">Tournament Name</label>
+              <input formControlName="tourName" type="text" class="form-control" id="tourName"
+                placeholder="Tournament Name">
+            </div>
+            <div class="col-sm-4">
+              <label for="tourPlace" class="font-weight-bold">Tournament Place</label>
+              <input formControlName="tourPlace" type="text" class="form-control" id="tourPlace"
+                placeholder="Tournament Place">
+            </div>
+            <div class="col-sm-2">
+              <label for="tourDate" class="font-weight-bold">Tournament Date</label>
+              <input formControlName="tourDate" type="date" class="form-control" id="tourDate"
+
+                placeholder="Tournament Date">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-2">
+              <button type="submit" class="btn btn-primary" [disabled]="!playerDetailsForm.valid">Submit</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>

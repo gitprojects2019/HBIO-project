@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PalyerDetailsComponent } from './palyer-details.component';
+import { SideMenuComponent } from './side-menu.component';
 
-describe('PalyerDetailsComponent', () => {
-  let component: PalyerDetailsComponent;
-  let fixture: ComponentFixture<PalyerDetailsComponent>;
+describe('SideMenuComponent', () => {
+  let component: SideMenuComponent;
+  let fixture: ComponentFixture<SideMenuComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PalyerDetailsComponent ]
+      declarations: [ SideMenuComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PalyerDetailsComponent);
+    fixture = TestBed.createComponent(SideMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

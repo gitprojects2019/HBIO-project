@@ -16,15 +16,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
-
-
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     PlayerlistComponent,
-    PalyerDetailsComponent
+    PlayerDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -37,9 +35,10 @@ import {MatTableModule} from '@angular/material/table';
     MatDatepickerModule,
     MatNativeDateModule,
     MatTableModule,
+    ReactiveFormsModule,
     playerRoutes,
     RouterModule
   ],
-  exports: [RouterModule]
+  exports: []
 })
 export class PlayerModule { }

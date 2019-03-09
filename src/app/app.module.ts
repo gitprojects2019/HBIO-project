@@ -8,10 +8,14 @@ import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { TopMenuComponent } from './shared/component/top-menu/top-menu.component';
+import { SideMenuComponent } from './shared/component/side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TopMenuComponent,
+    SideMenuComponent
   ],
   imports: [
     BrowserModule,
