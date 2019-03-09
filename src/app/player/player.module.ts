@@ -9,6 +9,9 @@ import { PlayerlistComponent } from './playerlist/playerlist.component';
 import { PlayerDetailsComponent } from './player-details/player-details.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSortModule, } from '@angular/material/sort';
+import { MatTableModule ,MatInputModule} from '@angular/material';
+import { MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({
@@ -18,6 +21,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    MatSortModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatInputModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     playerRoutes,

@@ -1,6 +1,8 @@
-export class PlayerDetails{
+export class IPlayerDetails{
     Id: string ;
-    Name:string;
+    FirstName:string;
+    MiddleName:string;
+    LastName:string;
     RegistrationId:string;
     GovernmentId:string;
     GovernmentIdType:string;
@@ -8,11 +10,11 @@ export class PlayerDetails{
     Age:string;
     Weight:string;
     ContactNumber:string;
-    // Country:string;
+    Country:string;
     State:string;
     District:string;
     Gender:string;
     TournamentName:string;
     TournamentDate:string;
-    // TournamentPlace:string;
+    TournamentPlace:string;
 }

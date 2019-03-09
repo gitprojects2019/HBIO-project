@@ -28,18 +28,6 @@ export class PlayerDetailsComponent implements OnInit {
     {value: '2', viewValue: 'Aadhar'},
     {value: '3', viewValue: 'License'}
   ];
-  districts =  [
-    {value: '0', viewValue: 'Select an district'},
-    {value: '1', viewValue: 'School Id card'},
-    {value: '2', viewValue: 'Aadhar'},
-    {value: '3', viewValue: 'License'}
-  ];
-  cities =  [
-    {value: '0', viewValue: 'Select an city'},
-    {value: '1', viewValue: 'School Id card'},
-    {value: '2', viewValue: 'Aadhar'},
-    {value: '3', viewValue: 'License'}
-  ];
   playerDetailsForm: FormGroup;
 
  test:false;
@@ -70,8 +58,7 @@ export class PlayerDetailsComponent implements OnInit {
   }
 
 
-  onSubmit(post) {
-    // console.log(post.firstName);
+  onSubmit() {
     console.log(this.playerDetailsForm.value);
   }
 
