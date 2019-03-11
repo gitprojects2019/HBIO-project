@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+
+
 @Component({
   selector: 'app-player-details',
   templateUrl: './player-details.component.html',

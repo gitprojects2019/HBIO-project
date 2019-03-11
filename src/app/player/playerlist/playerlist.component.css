@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+  }
+  
+  button {
+    margin: 16px 8px;
+  }
+
+  
+.pldsList {
+  width: 70%;
+  margin-left: 318px;
+  padding: 80px 3rem 1rem
+}
