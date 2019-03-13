@@ -1,3 +1,4 @@
+
 .pldsForm {
     width: 85%;
     margin-left: 318px;
@@ -15,3 +16,8 @@
     font-size: 14px;
     width: 100%;
   }
+
+  button {
+    margin: 16px 8px;
+  }
+
