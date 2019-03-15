@@ -43,16 +43,21 @@ export class PlayerlistComponent implements OnInit {
 
   constructor(private _playerlistService : PlayerDataService) { }
 
-  playerlist : IPlayerDetails []; 
+  playerlist : IPlayerDetails [];
   // dataSource : IPlayerDetails []
   ngOnInit() {
-   
-    this._playerlistService.getPlayers().subscribe(p => this.playerlist = p);
-    console.log(this.playerlist);
-    this.dataSource= new MatTableDataSource<IPlayerDetails>(this.playerlist);
-	  this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-  
+    // console.log("Component11 =>" + this.playerlist);
+    // this._playerlistService.getPlayers().subscribe(p => this.playerlist = p);
+    // console.log("Component" + this.playerlist);
+    // this.dataSource= new MatTableDataSource<IPlayerDetails>(this.playerlist);
+	  // this.dataSource.sort = this.sort;
+    // this.dataSource.paginator = this.paginator;
+    // this.products = [];
+    this._playerlistService.getPlayers().subscribe((data: IPlayerDetails[]) => {
+      console.log(data);
+      this.playerlist = data;
+    });
+
 }
 
 
@@ -65,8 +70,8 @@ export class PlayerlistComponent implements OnInit {
 }
 
 
-  
-  
-  
-  
+
+
+
+
 }

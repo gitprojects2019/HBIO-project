@@ -10,7 +10,14 @@ import {map,tap,catchError} from 'rxjs/operators';
 })
 export class PlayerDataService {
 
-  private _serviceUrl = "http://localhost:52256/api";
+  // private _serviceUrl = "http://localhost:52256/api";
+  private _serviceUrl = "http://172.30.2.103:55446/api";
+
+  private extractData(res: Response) {
+    let body = res;
+    return body || { };
+  }
+
   constructor(private _http: HttpClient) {
 
   }
@@ -31,10 +38,16 @@ export class PlayerDataService {
   //     catchError(this.handleError)
   //   );
   // }
-  getPlayers(): Observable<IPlayerDetails[]>{
-    return of(this.ListOfPlayers());
+  // getPlayers(): Observable<IPlayerDetails[]>{
+  //   return of(this.ListOfPlayers());
+  // }
+
+  getPlayers(): Observable<any> {
+    return this._http.get(this._serviceUrl+"/Player").pipe(
+      map(this.extractData));
+      console.log(this.extractData);
   }
-  
+
 
   ListOfPlayers() : IPlayerDetails[]{
     return [
