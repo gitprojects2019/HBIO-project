@@ -13,10 +13,12 @@ import { PlayerDataService } from 'src/app/shared/services/player-data.service';
 
 
 export class PlayerlistComponent implements OnInit {
-
+  private extractData(res: Response) {
+    let body = res;
+    return body || { };
+  }
 
   displayedColumns: string[] = [
-    "Id",
     "FirstName",
     "MiddleName",
     "LastName",
@@ -45,33 +47,29 @@ export class PlayerlistComponent implements OnInit {
 
   playerlist : IPlayerDetails [];
   // dataSource : IPlayerDetails []
-  ngOnInit() {
-    // console.log("Component11 =>" + this.playerlist);
-    // this._playerlistService.getPlayers().subscribe(p => this.playerlist = p);
-    // console.log("Component" + this.playerlist);
-    // this.dataSource= new MatTableDataSource<IPlayerDetails>(this.playerlist);
-	  // this.dataSource.sort = this.sort;
-    // this.dataSource.paginator = this.paginator;
-    // this.products = [];
+  ngOnInit() 
+  {
+    console.log("Component11 =>" + this.playerlist);
+    
     this._playerlistService.getPlayers().subscribe((data: IPlayerDetails[]) => {
       console.log(data);
       this.playerlist = data;
+      console.log(this.playerlist);
+      this.LoadTableData();
     });
+  }
 
-}
-
-
+  LoadTableData(){
+  console.log("Component" + this.playerlist);
+  this.dataSource= new MatTableDataSource<IPlayerDetails>(this.playerlist);
+  this.dataSource.sort = this.sort;
+  this.dataSource.paginator = this.paginator;
+ }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   onRowClicked(row) {
     console.log('Row clicked: ', row);
-}
-
-
-
-
-
-
+  }
 }

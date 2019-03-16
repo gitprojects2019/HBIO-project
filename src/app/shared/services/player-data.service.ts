@@ -11,7 +11,8 @@ import {map,tap,catchError} from 'rxjs/operators';
 export class PlayerDataService {
 
   // private _serviceUrl = "http://localhost:52256/api";
-  private _serviceUrl = "http://172.30.2.103:55446/api";
+  private _serviceUrl = "http://localhost:62817/api";
+  // private _serviceUrl = "http://172.30.2.103:55446/api";
 
   private extractData(res: Response) {
     let body = res;
