@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { IPlayerDetails } from './../../model/players';
 import { PlayerDataService } from 'src/app/shared/services/player-data.service';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-playerlist',
@@ -46,7 +47,8 @@ export class PlayerlistComponent implements OnInit {
   constructor(private _playerlistService : PlayerDataService) { }
 
   playerlist : IPlayerDetails [];
-  // dataSource : IPlayerDetails []
+  showLoader : boolean = true ;
+
   ngOnInit() 
   {
     console.log("Component11 =>" + this.playerlist);
@@ -55,7 +57,10 @@ export class PlayerlistComponent implements OnInit {
       console.log(data);
       this.playerlist = data;
       console.log(this.playerlist);
-      this.LoadTableData();
+      setTimeout(() => {
+        this.LoadTableData();
+      }, 100);
+      
     });
   }
 
@@ -64,7 +69,8 @@ export class PlayerlistComponent implements OnInit {
   this.dataSource= new MatTableDataSource<IPlayerDetails>(this.playerlist);
   this.dataSource.sort = this.sort;
   this.dataSource.paginator = this.paginator;
- }
+  this.showLoader = false;
+}
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }

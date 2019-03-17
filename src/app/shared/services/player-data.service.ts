@@ -29,57 +29,10 @@ export class PlayerDataService {
     return Observable.throw(error.json() || 'Server Error');
   }
 
-  // .map((myResponse: Response) => <ISuperHero[]>myResponse.json())
-  // getPlayers(): Observable<IPlayerDetails[]> {
-
-  // return this._http.get<IPlayerDetails[]>(this._serviceUrl+"/playerDetails")
-  //   .pipe(
-  //     map((response:any) => response),
-  //     tap(data => console.log("All: " + JSON.stringify(data))),
-  //     catchError(this.handleError)
-  //   );
-  // }
-  // getPlayers(): Observable<IPlayerDetails[]>{
-  //   return of(this.ListOfPlayers());
-  // }
-
   getPlayers(): Observable<any> {
     return this._http.get(this._serviceUrl+"/Player").pipe(
       map(this.extractData));
       console.log(this.extractData);
   }
-
-
-  ListOfPlayers() : IPlayerDetails[]{
-    return [
-      {
-        Id:"sdfsfad",
-        FirstName:"sdfsfad",
-        MiddleName:"sdfsfad",
-        LastName:"sdfsfad",
-        RegistrationId:"sdfsfad",
-        GovernmentId:"sdfsfad",
-        GovernmentIdType:"sdfsfad",
-        DateOfBirth:"sdfsfad",
-        Age:"sdfsfad",
-        Weight:"sdfsfad",
-        ContactNumber:"sdfsfad",
-        Country:"sdfsfad",
-        State:"sdfsfad",
-        District:"sdfsfad",
-        Gender:"sdfsfad",
-        TournamentName:"sdfsfad",
-        TournamentDate:"sdfsfad",
-        TournamentPlace:"sdffsfs"
-          }
-    ];
-  }
-
-
-  // addPlayerDetails(playerDetails: IPlayerDetails) {
-  //   return
-  // }
-
-
 
 }

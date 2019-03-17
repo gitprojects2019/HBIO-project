@@ -6,7 +6,7 @@
   }
 
   table {
-    width: 100%;
+    width: 110%;
   }
   
   th.mat-sort-header-sorted {
@@ -19,5 +19,10 @@
 
   button {
     margin: 16px 8px;
+  }
+
+  .mat-header-cell{
+    margin-left: 5 px;
+    font-family: 'Courier New', Courier, monospace;
   }
 

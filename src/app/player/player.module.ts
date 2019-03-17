@@ -14,11 +14,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material';
+import {MatNativeDateModule} from '@angular/material'; 
 import {MatTableModule} from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSortModule, } from '@angular/material/sort';
 import { MatPaginatorModule} from '@angular/material/paginator';
+import { MatProgressSpinnerModule} from '@angular/material';
 
 
 
@@ -42,6 +43,7 @@ import { MatPaginatorModule} from '@angular/material/paginator';
     MatDatepickerModule,
     MatNativeDateModule,
     MatTableModule,
+    MatProgressSpinnerModule,
     ReactiveFormsModule,
     playerRoutes,
     RouterModule
